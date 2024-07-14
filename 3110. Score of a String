@@ -1,0 +1,9 @@
+int scoreOfString(char* s) {
+     int len=strlen(s);
+     int tot=0;
+    for(int i=0;i<len-1;i++){
+     int add=s[i]-s[i+1];
+       tot=(abs(add)+tot);
+}
+return tot;
+}
