@@ -1,0 +1,19 @@
+char* intToRoman(int num) {
+ char *M[]={"","M","MM","MMM"};
+ char *I[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
+ char *X[]={"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
+ char *C[]={"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
+
+ static char roman[20];
+  roman[0] = '\0';
+
+//concatenate the roman letters;
+strcat(roman,M[num/1000]);
+strcat(roman,C[(num%1000)/100]);
+strcat(roman,X[(num%100)/10]);
+
+strcat(roman,I[num%10]);
+
+return roman;
+   
+}
