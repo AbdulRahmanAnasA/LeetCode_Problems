@@ -1,0 +1,28 @@
+
+
+char * defangIPaddr(char * address){
+  int n=strlen(address);
+    int k=0;
+    for(int i=0;i<n-1;i++){
+        if(address[i]=='.'){
+            k++;
+        }
+    }
+    int j=0;
+       static char word[100]="";
+      
+       //int len=strlen(word);
+    
+    for(int i=0;i<n;i++){
+        if(address[i] != '.'){
+            word[j++]=address[i];
+        }
+        else{
+           word[j++] = '[';
+            word[j++] = '.';
+            word[j++] = ']';
+        }
+    }
+    word[j]='\0';
+return word;
+}
