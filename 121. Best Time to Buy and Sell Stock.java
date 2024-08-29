@@ -14,3 +14,19 @@ class Solution {
         return profit;
     }
 }
+
+//Another Easy Solution 
+class Solution {
+    public int maxProfit(int[] prices) {
+        int profit=0;
+
+        int minp=prices[0];
+
+        for(int i=1;i<prices.length;i++){
+           minp=Math.min(minp,prices[i]);
+           int cp=prices[i]-minp;
+           profit=Math.max(profit,cp);
+        }
+        return profit;
+    }
+}
